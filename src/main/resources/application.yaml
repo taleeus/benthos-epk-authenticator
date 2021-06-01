@@ -1,7 +1,11 @@
 auth:
-  secret: ${AUTH_SECRET:4988c72e251839b3ea1f18bed3e85342f1a09e98}
+  secret: ${AUTH_SECRET}
+
+jwt:
+  secret: ${JWT_SECRET}
+  expire-in: ${JWT_EXPIREIN}
 
 spring:
   data:
     mongodb:
-      uri: ${MONGO_URI:mongodb+srv://benthos:oXEeYY5XqQS1PlFX@cluster0.coq8i.mongodb.net/db_benthos?retryWrites=true&w=majority}
+      uri: ${MONGO_URI}
