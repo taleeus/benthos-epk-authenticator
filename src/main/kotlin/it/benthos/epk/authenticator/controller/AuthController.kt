@@ -23,6 +23,9 @@ class AuthController(val authService: AuthService) {
         = authService.login(userRequest.username, userRequest.password)
             .map { JwtResponse(it) }
 
+    @GetMapping
+    fun ping() = Mono.empty<Void>()
+
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED, reason = "Illegal arguments")
     @ExceptionHandler(IllegalArgumentException::class)
     fun illegalArgumentHandler() { }
